@@ -8,7 +8,9 @@ const pool = new Pool({
 
 pool.connect().then(()=>{
     console.log("sucee");
-}).catch(()=>{
+
+}).catch((err)=>{
+    console.log(err);
     console.log("error");
 });
 module.exports=pool;
