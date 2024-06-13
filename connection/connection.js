@@ -1,19 +1,14 @@
-const pgp = require('pg-promise')();
 const path = require('path');
 let dotenv = require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
-console.log(dotenv);
-const db = pgp({
-    user: process.env.PGUSER,
-    host: process.env.PGHOST,
-    database: process.env.PGDATABASE,
-    password: process.env.PGPASSWORD, 
-    port: process.env.PGPORT
-});
+const { Pool } = require('pg')
 
-db.connect().then(()=>{
+const pool = new Pool({
+  connectionString: process.env.POSTGRES_URL,
+})
+
+pool.connect().then(()=>{
     console.log("sucee");
 }).catch(()=>{
     console.log("error");
 });
-
-module.exports=db;
+module.exports=pool;
