@@ -9,6 +9,16 @@ class formationcontrolleur{
 
             }
         }
+        static formationbyid=async(req,res)=>{
+            const id=req.params.id
+            console.log("hhhhhhh: ",id);
+            const result=await Formation.getuserbyid(id
+                
+            );
+            if(result){
+                res.json(result); 
+            }
+        }
 
 }
 module.exports=formationcontrolleur;
