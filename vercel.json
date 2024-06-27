@@ -1,0 +1,9 @@
+{"routes": [
+    {
+      "src": "/formation",
+      "dest": "/"
+    },
+    { "src": "/formationid/:id",
+      "dest": "/"}
+    
+    ]}
