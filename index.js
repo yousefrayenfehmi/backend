@@ -5,8 +5,12 @@ const app=express();
 const cors=require("cors")
 port=3000;
 app.use(cors({
-    origin: 'https://www.mathilda-learning.com'
-  }));
+  origin: 'https://www.mathilda-learning.com', // or '*' to allow all origins
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+  allowedHeaders: 'Content-Type, Authorization'
+}));
+
 app.use(router);
 
 app.listen(port,(req,res)=>{
