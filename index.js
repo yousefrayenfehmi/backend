@@ -10,6 +10,8 @@ const corsOptions = {
   allowedHeaders: ['Content-Type', 'Authorization']
 };
 
+app.use(cors(corsOptions));
+
 app.use(router);
 
 app.listen(port,(req,res)=>{
