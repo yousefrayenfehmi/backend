@@ -6,7 +6,7 @@ const app=express();
 const cors=require("cors")
 port=3000;
 const corsOptions = {
-  origin: [process.env.backend_url, process.env.domaine_url],
+  origin: ['https://front-end-ecru-rho.vercel.app', 'https://www.mathilda-learning.com'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
 };
