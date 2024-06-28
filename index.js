@@ -4,12 +4,11 @@ const router=require("./route/route")
 const app=express();
 const cors=require("cors")
 port=3000;
-app.use(cors({
-  origin: 'https://www.mathilda-learning.com', // or '*' to allow all origins
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  credentials: true,
-  allowedHeaders: 'Content-Type, Authorization'
-}));
+const corsOptions = {
+  origin: ['https://front-end-ecru-rho.vercel.app', 'https://www.mathilda-learning.com'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+};
 
 app.use(router);
 
