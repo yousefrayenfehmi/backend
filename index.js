@@ -7,7 +7,7 @@ const app=express();
 const cors=require("cors")
 port=3000;
 const corsOptions = {
-  origin: [process.env.backend_url, process.env.domaine_url],
+  origin: [process.env.backend_url, process.env.domaine_url,"http://localhost:5173/"],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
 };
