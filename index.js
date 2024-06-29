@@ -6,14 +6,7 @@ const router=require("./route/route")
 const app=express();
 const cors=require("cors")
 port=3000;
-const corsOptions = {
-  origin: [process.env.backend_url, process.env.domaine_url,"http://localhost:5173/"],
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-};
-
-
-app.use(cors(corsOptions));
+app.use(cors()); // Permet toutes les requêtes CORS
 
 app.use(router);
 
